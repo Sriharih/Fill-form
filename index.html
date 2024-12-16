@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FILL THE FORM</h1>
+    <p>name <input id="infield"></p>
+    <p>course <input id="courses"></p>
+    <button onclick="adds()">Add</button>
+    <ul id="datas">
+        <div id="peace">
+            <li>hari</li>
+            <li>java</li>
+            <button onclick="del(event)">Delete</button>
+        </div>
+    </ul>
+    <script>
+        var ip=document.getElementById("infield");
+        var cs=document.getElementById("courses");
+        var ul=document.getElementById("datas");
+        //var div=document.getElementById("peace");
+        function adds()
+        {
+          var li1=document.createElement("li");
+          var li2=document.createElement("li");
+          var div=document.createElement("div");
+          li1.textContent=ip.value;
+          li2.textContent=cs.value;//+"<button onclick='del(event)'>Delete</button>";
+          div.innerHTML=li1.textContent+"<br>"+li2.textContent+"<button onclick='del(event)'>Delete</button>";
+          ul.append(div); 
+         // ul.append(li2);   
+        }
+        function del(event)
+        {
+            console.log(event.target.parentElement);
+            event.target.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
